@@ -60,8 +60,8 @@ public class PlayerController_v1 : MonoBehaviour
 
         if(verticalInput >  0.8 || verticalInput < -0.8 || horizontalInput > 0.8 || horizontalInput < -0.8)
         {
-
-            m_speed = m_runSpeed;
+            m_speed = Mathf.Lerp(m_speed, m_runSpeed, Time.deltaTime * 2);
+            //m_speed = m_runSpeed;
            // m_animator.SetFloat("x", m_y);
             //m_animator.SetFloat("y", m_x);
 

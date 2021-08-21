@@ -161,10 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f30ec74706d9cc4e9e808779ab31016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_test: 0
   m_speed: 10
   m_walkSpeed: 5
-  m_runSpeed: 7
+  m_runSpeed: 50
   m_rotationSpeed: 720
 --- !u!1 &185461605
 GameObject:
@@ -504,7 +503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f30ec74706d9cc4e9e808779ab31016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_test: 0
   m_speed: 5
   m_walkSpeed: 5
   m_runSpeed: 10
@@ -576,5 +574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Poup\xE9e_Marche_et_Course"
       objectReference: {fileID: 0}
+    - target: {fileID: 3248015455133101225, guid: ce057383d7a80fe4daf86ea0fcf6ac6d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0db9bf539555594a84605f5808b0493, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce057383d7a80fe4daf86ea0fcf6ac6d, type: 3}
