@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlayerController_v1 : MonoBehaviour
 {
+    //[SerializeField][Range (0,1)] private float m_test;
     [SerializeField] private float m_speed = 10;
     [SerializeField] private float m_walkSpeed = 5;
     [SerializeField] private float m_runSpeed = 7;
     [SerializeField] private float m_rotationSpeed = 720;
+    
+    private float m_x;
+    private float m_y;
+
+    Animator m_animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +35,9 @@ public class PlayerController_v1 : MonoBehaviour
 
         transform.Translate(movementDirection * m_speed * Time.deltaTime, Space.World);
 
+
+        //Orientation du player en fonction de la direction prise
+
         if(movementDirection != Vector3.zero)
         {
 
@@ -37,16 +46,42 @@ public class PlayerController_v1 : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, m_rotationSpeed * Time.deltaTime);  
 
         }   
+
+
+
+        m_x = verticalInput + horizontalInput;
         
 
-        if(verticalInput >  0.5 || verticalInput < -0.5 || horizontalInput > 0.5 || horizontalInput < -0.5)
+            m_animator.SetFloat("x", m_x);
+
+        //if(verticalInput < 0 &&)
+
+        
+
+        if(verticalInput >  0.8 || verticalInput < -0.8 || horizontalInput > 0.8 || horizontalInput < -0.8)
         {
 
             m_speed = m_runSpeed;
+           // m_animator.SetFloat("x", m_y);
+            //m_animator.SetFloat("y", m_x);
 
         }else
         {
             m_speed = m_walkSpeed;
+            //m_animator.SetFloat("x", -1);
+            //m_animator.SetFloat("y", 0);
         }
+        
+        if(Input.GetMouseButtonDown(0))
+        {
+
+            Debug.Log(verticalInput);
+
+        }
+        
+
+
+        
+
     }
 }
