@@ -47,12 +47,17 @@ public class PlayerController_v1 : MonoBehaviour
 
         }   
 
-
-
-        m_x = verticalInput + horizontalInput;
         
+        m_animator.SetFloat("x", m_x);
 
-            m_animator.SetFloat("x", m_x);
+         m_x = verticalInput + horizontalInput;
+
+        //float input = Mathf.Clamp01(new Vector2(horizontalInput, verticalInput)).magnitute;
+
+        
+        
+        //m_x = input;
+            
 
         //if(verticalInput < 0 &&)
 
@@ -60,7 +65,26 @@ public class PlayerController_v1 : MonoBehaviour
 
         if(verticalInput >  0.8 || verticalInput < -0.8 || horizontalInput > 0.8 || horizontalInput < -0.8)
         {
+           
             m_speed = Mathf.Lerp(m_speed, m_runSpeed, Time.deltaTime * 2);
+            
+            //m_speed = m_runSpeed;
+           // m_animator.SetFloat("x", m_y);
+            //m_animator.SetFloat("y", m_x);
+
+        }else
+        {
+            m_speed = m_walkSpeed;
+            //m_animator.SetFloat("x", -1);
+            //m_animator.SetFloat("y", 0);
+        }
+
+        if(verticalInput >  -0.8 || verticalInput < 0.8 || horizontalInput > -0.8 || horizontalInput < 0.8)
+        {   
+            m_x = -verticalInput + -horizontalInput;
+           
+            m_speed = Mathf.Lerp(m_speed, m_runSpeed, Time.deltaTime * 2);
+            
             //m_speed = m_runSpeed;
            // m_animator.SetFloat("x", m_y);
             //m_animator.SetFloat("y", m_x);
