@@ -9,6 +9,7 @@ public class PlayerController_v1 : MonoBehaviour
     [SerializeField] private float m_walkSpeed = 5;
     [SerializeField] private float m_runSpeed = 7;
     [SerializeField] private float m_rotationSpeed = 720;
+    [SerializeField] private float m_cameraTurnSpeed;
     
     private float m_x;
     private float m_y;
@@ -16,22 +17,27 @@ public class PlayerController_v1 : MonoBehaviour
     private bool m_isMoving;
 
     Animator m_animator;
+    RotateCamera m_rotateCamera;
     //[SerializeField] Camera m_camera;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_animator = GetComponent<Animator>();
+        m_rotateCamera = RotateCamera.singleton;
         
     }
 
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-        //transform.rotation = m_camera.transform.rotation;
+        float delta = Time.fixedDeltaTime;
+        // transform.rotation = m_camera.transform.rotation;
 
         float horizontalInput = Input.GetAxis("LeftJoystickX");
         float verticalInput = Input.GetAxis("LeftJoystickY");
+        float RverticalInput = Input.GetAxis("RightJoystickY");
+        float RhorizontalInput = Input.GetAxis("RightJoystickX");
  /*    
         transform.Translate(Vector3.right * m_speed * horizontalInput * Time.deltaTime);
         transform.Translate(Vector3.back * m_speed * verticalInput * Time.deltaTime);
@@ -40,8 +46,9 @@ public class PlayerController_v1 : MonoBehaviour
         //movementDirection.Normalize();
 
         transform.Translate(movementDirection * m_speed * Time.deltaTime, Space.World);
-
-
+         Vector3 relative;
+        relative = transform.InverseTransformDirection(Vector3.up);
+               
         //Orientation du player en fonction de la direction prise
 
         if(movementDirection != Vector3.zero)
@@ -52,6 +59,14 @@ public class PlayerController_v1 : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, m_rotationSpeed * Time.deltaTime);  
 
         }   
+
+         if(m_rotateCamera != null)
+            {
+
+                m_rotateCamera.FollowTarget(delta);
+                m_rotateCamera.HandleCameraRotation(delta, RhorizontalInput, RverticalInput);
+
+            }
 
         m_x = verticalInput;
         m_y = horizontalInput;
