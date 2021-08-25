@@ -16,16 +16,20 @@ public class PlayerController_v1 : MonoBehaviour
     private bool m_isMoving;
 
     Animator m_animator;
+    //[SerializeField] Camera m_camera;
     // Start is called before the first frame update
     void Start()
     {
         m_animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-   
+        
+        //transform.rotation = m_camera.transform.rotation;
+
         float horizontalInput = Input.GetAxis("LeftJoystickX");
         float verticalInput = Input.GetAxis("LeftJoystickY");
  /*    
@@ -33,7 +37,7 @@ public class PlayerController_v1 : MonoBehaviour
         transform.Translate(Vector3.back * m_speed * verticalInput * Time.deltaTime);
 */
         Vector3 movementDirection = new Vector3 (horizontalInput, 0, verticalInput);
-        movementDirection.Normalize();
+        //movementDirection.Normalize();
 
         transform.Translate(movementDirection * m_speed * Time.deltaTime, Space.World);
 
