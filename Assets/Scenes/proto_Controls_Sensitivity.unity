@@ -190,7 +190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111028903}
-  m_LocalRotation: {x: -0.000000045669946, y: 0.97650117, z: -0.21551217, w: -0.00000020693383}
+  m_LocalRotation: {x: -0.000000038253585, y: 0.97650117, z: -0.21551217, w: -0.00000017332974}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pathName: MagicPath
-  m_time: 15
+  m_time: 5
 --- !u!199 &163936056
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5211,7 +5211,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598325803}
-  m_LocalRotation: {x: -0.0004950532, y: 0.9855924, z: -0.16911258, w: -0.0028851822}
+  m_LocalRotation: {x: -0.000511573, y: 0.9855921, z: -0.16911253, w: -0.0029814602}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5525,7 +5525,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.0004950525, y: 0.9855924, z: -0.16911262, w: -0.002885182}
+  m_LocalRotation: {x: -0.0005115748, y: 0.98559207, z: -0.1691126, w: -0.00298146}
   m_LocalPosition: {x: 0.0000035047292, y: 5, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5707,17 +5707,16 @@ MonoBehaviour:
   pathName: MagicPath
   pathColor: {r: 1, g: 0, b: 0.038758278, a: 1}
   nodes:
-  - {x: 0, y: 1, z: 0}
-  - {x: 0.4883951, y: 1, z: -0.40789956}
-  - {x: 3, y: 3, z: 3}
-  - {x: -3.9818044, y: 4, z: 4}
-  - {x: 8.743723, y: 0.001623869, z: 5}
-  - {x: -0.35483098, y: 6, z: -2.5605466}
-  - {x: 7, y: 7, z: 7}
-  - {x: -8.640824, y: 8, z: 8}
-  - {x: 9, y: 14.424347, z: 3.3428707}
-  - {x: 10, y: 1.3375254, z: 10}
-  nodeCount: 10
+  - {x: -0.027620941, y: 1.0189826, z: -0.36491683}
+  - {x: -0.6647064, y: 1, z: -0.48451945}
+  - {x: -0.9091834, y: 1.1213365, z: 0.36096492}
+  - {x: 0.5537002, y: 1.341246, z: 0.3774076}
+  - {x: 0.5586841, y: 1.7016937, z: -0.5106961}
+  - {x: -0.63633657, y: 1.9762576, z: -0.6805955}
+  - {x: -0.84127176, y: 2.2560632, z: 0.5413423}
+  - {x: 0.8148005, y: 2.6614738, z: 0.8250237}
+  - {x: -0.02762094, y: 1.018983, z: -0.3649168}
+  nodeCount: 9
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
@@ -5729,7 +5728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047612393}
   m_LocalRotation: {x: 0.00024051653, y: -0.0010757882, z: 0.00257927, w: 0.99999607}
-  m_LocalPosition: {x: 0.02, y: 1.37, z: -0}
+  m_LocalPosition: {x: -0.067, y: 1.37, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5801,7 +5800,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092766725}
-  m_LocalRotation: {x: -0.000000048840615, y: 0.96802825, z: -0.2508413, w: -0.00000018848206}
+  m_LocalRotation: {x: -0.000000056316253, y: 0.96802825, z: -0.25084132, w: -0.00000021733152}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

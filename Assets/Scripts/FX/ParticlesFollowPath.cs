@@ -9,7 +9,7 @@ public class ParticlesFollowPath : MonoBehaviour
 [SerializeField] private float m_time;
     void Start()
     {
-        
+       
       Move();
 
     }
@@ -19,7 +19,7 @@ public class ParticlesFollowPath : MonoBehaviour
     private void Move()
     {
 
-        iTween.MoveTo(gameObject, iTween.Hash("path",iTweenPath.GetPath(m_pathName), "time", 15));
+        iTween.MoveTo(gameObject, iTween.Hash("path",iTweenPath.GetPath(m_pathName), "time", m_time));
 
 
     }
