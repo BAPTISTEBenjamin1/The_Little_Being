@@ -17,7 +17,7 @@ public class PlayerController_v1 : MonoBehaviour
 
     Animator m_animator;
     Rigidbody m_rigidbody;
-    //[SerializeField] Camera m_camera;
+    [SerializeField] Camera m_camera;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +35,42 @@ public class PlayerController_v1 : MonoBehaviour
         float horizontalInput = Input.GetAxis("LeftJoystickX");
         float verticalInput = Input.GetAxis("LeftJoystickY");
 
-     
+        Vector3 x = transform.right * Input.GetAxis("LeftJoystickX");
+        Vector3 y = transform.forward * Input.GetAxis("LeftJoystickY");
+        //transform.rotation = m_camera.transform.rotation;
+    /*    
 
+        if(horizontalInput < 0)
+        {
+
+            transform.Translate(Vector3.left * m_speed * Time.deltaTime, Space.World);
+
+        }
+
+        if(horizontalInput > 0)
+        {
+
+            transform.Translate(Vector3.right * m_speed * Time.deltaTime, Space.World);
+
+        }
+
+        if(verticalInput < 0)
+        {
+
+            transform.Translate(Vector3.back * m_speed * Time.deltaTime, Space.World);
+
+        }
+        if(verticalInput > 0)
+        {
+
+            transform.Translate(Vector3.forward * m_speed * Time.deltaTime, Space.World);
+
+        }
+
+*/
         
 
-        Vector3 movementDirection = new Vector3(horizontalInput, 0 ,verticalInput);
+        Vector3 movementDirection = (x+y) * m_speed * Time.deltaTime;
 
         transform.Translate(movementDirection * m_speed * Time.deltaTime, Space.World);
 
@@ -61,7 +92,7 @@ public class PlayerController_v1 : MonoBehaviour
 
         {
             m_isMoving = false;
-            Debug.Log(m_isMoving);
+            //Debug.Log(m_isMoving);
             m_animator.SetBool("isMoving", false);
         }
 
@@ -69,7 +100,7 @@ public class PlayerController_v1 : MonoBehaviour
 
         {
              m_isMoving = true;
-            Debug.Log(m_isMoving);
+            //Debug.Log(m_isMoving);
             m_animator.SetBool("isMoving", true);
         }
 
@@ -83,7 +114,12 @@ public class PlayerController_v1 : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log(verticalInput);
+            Debug.Log(m_animator.GetFloat("x"));
+        }
+
+         if(Input.GetMouseButtonDown(1))
+        {
+            Debug.Log(m_animator.GetFloat("y"));
         }
     }
 }
