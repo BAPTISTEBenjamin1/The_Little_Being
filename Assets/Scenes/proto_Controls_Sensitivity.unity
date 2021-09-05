@@ -190,7 +190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111028903}
-  m_LocalRotation: {x: -0.000000048384525, y: 0.97650117, z: -0.21551217, w: -0.00000021923377}
+  m_LocalRotation: {x: -0.00000004567214, y: 0.97650117, z: -0.21551217, w: -0.00000020694377}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5143,7 +5143,7 @@ Transform:
   m_Children:
   - {fileID: 1847117144}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598325803
 GameObject:
@@ -5415,7 +5415,7 @@ MonoBehaviour:
     m_MaxSpeed: 2
     m_AccelTime: 0.2
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: RightJoystickY
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: 0
@@ -5490,7 +5490,7 @@ Transform:
   - {fileID: 598325805}
   - {fileID: 111028905}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -5569,7 +5569,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.0005115748, y: 0.98559207, z: -0.1691126, w: -0.0029814597}
+  m_LocalRotation: {x: -0.0005115748, y: 0.98559207, z: -0.1691126, w: -0.00298146}
   m_LocalPosition: {x: 0.00000016686909, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5831,8 +5831,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092766725}
-  m_LocalRotation: {x: -0.000000048840608, y: 0.96802825, z: -0.2508413, w: -0.00000018848206}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.25084135, y: -0.000000014411709, z: 0.00000000373445, w: 0.96802825}
+  m_LocalPosition: {x: -0.0000035047292, y: 0, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1352015150}
@@ -6254,11 +6254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f30ec74706d9cc4e9e808779ab31016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 3
+  m_speed: 6
   m_walkSpeed: 2.5
   m_runSpeed: 10
-  m_rotationSpeed: 400
-  m_camera: {fileID: 963194227}
+  m_rotationSpeed: 200
+  m_camera: {fileID: 0}
 --- !u!65 &1826429832
 BoxCollider:
   m_ObjectHideFlags: 0

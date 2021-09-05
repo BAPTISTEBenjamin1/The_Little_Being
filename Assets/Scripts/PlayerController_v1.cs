@@ -37,6 +37,8 @@ public class PlayerController_v1 : MonoBehaviour
 
         Vector3 x = transform.right * Input.GetAxis("LeftJoystickX");
         Vector3 y = transform.forward * Input.GetAxis("LeftJoystickY");
+
+        
         //transform.rotation = m_camera.transform.rotation;
     /*    
 
@@ -70,18 +72,26 @@ public class PlayerController_v1 : MonoBehaviour
 */
         
 
-        Vector3 movementDirection = (x+y) * m_speed * Time.deltaTime;
+        Vector3 movementDirection = y * m_speed * Time.deltaTime;
+        Vector3 movementRotation = x * m_speed * Time.deltaTime;
 
-        transform.Translate(movementDirection * m_speed * Time.deltaTime, Space.World);
+        transform.Translate(movementDirection, Space.World);
+
+        
 
         //Orientation du player en fonction de la direction prise
-
+        if(horizontalInput != 0)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movementRotation, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, m_rotationSpeed * Time.deltaTime);  
+        }   
+/*
         if(movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, m_rotationSpeed * Time.deltaTime);  
         }   
-
+*/
         m_x = verticalInput;
         m_y = horizontalInput;
 
